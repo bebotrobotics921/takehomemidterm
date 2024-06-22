@@ -1,0 +1,12 @@
+.bookView{
+    display: flex;
+    align-items: cneter;
+    margin: 20px;
+}
+
+
+.descriptions{
+    display: flex;
+    position: absolute;
+    margin-right: -100px;
+}
