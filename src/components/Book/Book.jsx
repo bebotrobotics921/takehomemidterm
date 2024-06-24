@@ -1,13 +1,11 @@
-
 import styles from "./Book.module.css";
-
 export function Book({ books, selected, getStars }) {
 
         return (
             
-                    <div className={styles.bookView}>
+                    <div key={books.id} className={styles.bookView}>
                         {books.map((book)=>
-                        <div key={book.id}>
+                        <div >
                             <div className={styles.bookCover}>
                                 {book.id === selected ? (
                                 <img height="300" src={book.coverImg} />
@@ -23,16 +21,15 @@ export function Book({ books, selected, getStars }) {
                                     ""
                                 )}
                             </div>
-                            <div className={styles.sequels}>     
-                                   
-                               
+                            <div className={styles.sequels}>
                                 {book.id === selected ? (
-                                <ol>{book.sequels}</ol>
+                                <ol key={book.id}> {book.sequels} </ol> 
+                                /*if i do this : {book.sequels.map((sequel)=><ol>{sequel}</ol>)} gives me a unique "key" error*/
                                 ): (
                                     ""
                                 )}
-                             
-                           </div>
+                            </div> 
+                          
                            <div className={styles.stars}>
                                 {book.id===selected ? (
                                 <p className="stars">Rating: {getStars(book.rating)}</p>
