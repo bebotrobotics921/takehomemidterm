@@ -19,12 +19,15 @@ function App() {
     }
     return stars;
   }
+  
+  
   return (
     <>
     <Book books={books}
           selected={selected}
           setSelected={setSelected}
           getStars={getStars}
+          
           />
     <BookList books={books}
               selected={selected}

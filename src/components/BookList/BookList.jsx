@@ -1,21 +1,22 @@
-
-export function BookList({ books, selected, setSelected }) {
+import styles from "./BookList.module.css";
+export function BookList({ books, setSelected}) {
 
     return (
-        <div className="book-list">
-           <h1>Book List</h1>
-           <div>
-            {books.map((book) => 
-            <div className="book-item" key={book.id}>
+        <>
+       
+        <ul key={books.id} className={styles.bookList}>
+            {books.map((book) => (
+           
                 
-                <p className={book.id === selected ? "underline" : ""}
-                   onClick={() => setSelected(book.id)}>
+                <li className={styles.title}
+                    key={book.id}
+                    onClick={() => setSelected(book.id)}>
                     {book.name}
-                </p>
-            </div>
-            )}
-           </div>
-        </div>
+                </li>
+           
+            ))}
+           </ul>
+        </>
     )
 }
 

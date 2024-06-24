@@ -1,0 +1,19 @@
+
+.bookList{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    list-style: none;
+}
+
+.title{
+    background-color: beige;
+    padding: 30px;
+    width: 300px;
+    justify-content: center;
+}
+
+.title:hover{
+    background-color: orange;
+}

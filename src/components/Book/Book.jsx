@@ -1,56 +1,46 @@
+
 import styles from "./Book.module.css";
 
 export function Book({ books, selected, getStars }) {
-        
+
         return (
-            <div className= "book">
-                <h1>Book</h1>
+            
                     <div className={styles.bookView}>
                         {books.map((book)=>
                         <div key={book.id}>
                             <div className={styles.bookCover}>
                                 {book.id === selected ? (
-                                <img height="400" src={book.coverImg} />
+                                <img height="300" src={book.coverImg} />
                                 ) : (
                                     ""
                                 )}
                             </div>
                         
-                            <div className={styles.details}>
-                                <div className="descriptions">
-                                <div>
-                                    {book.id === selected ? (
-                                        <p >{book.name}</p>
-                                    ): (
-                                        ""
-                                    )}
-                                </div>
-                                <div>
-                                    {book.id === selected ? (
-                                        <p>{book.author} & {book.coAuthor}</p>
-                                    ): (
-                                        ""
-                                    )}
-                                </div>
-                                <div>
-                                    {book.id === selected ? (
-                                        <div>{book.id === selected ? (<ol>{book.sequels}</ol>) : ("")}</div>
-                                    ): (
-                                        ""
-                                    )}
-                                </div>
-                                <div>
-                                    {book.id === selected ? (
-                                        <span className="stars">Rating: {getStars(book.rating)}</span>
-                                    ): (
-                                        ""
-                                    )}
-                                </div>
-                                </div>
-                                
+                            <div className={styles.author}>
+                                {book.id===selected ? (
+                                <p>{book.author} <br></br>{book.coAuthor}</p>
+                                ):(
+                                    ""
+                                )}
+                            </div>
+                            <div className={styles.sequels}>     
+                                   
+                               
+                                {book.id === selected ? (
+                                <ol>{book.sequels}</ol>
+                                ): (
+                                    ""
+                                )}
+                             
+                           </div>
+                           <div className={styles.stars}>
+                                {book.id===selected ? (
+                                <p className="stars">Rating: {getStars(book.rating)}</p>
+                                ):(
+                                    ""
+                                )}
+                            </div>            
                             </div>   
-                          
-                        </div>
                          )}
                     </div>    
                
@@ -58,7 +48,7 @@ export function Book({ books, selected, getStars }) {
 
                     
                         
-            </div>
+           
         )
 }
 
